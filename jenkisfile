@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git cole') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sakshi-kumari28/spring-petclinic.git'
+            }
+        }
+           stage('mav package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
